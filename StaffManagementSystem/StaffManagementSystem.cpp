@@ -1,11 +1,53 @@
 ﻿// StaffManagementSystem.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
-
 #include <iostream>
+#include <string>
+#include "Staff.h"
+#include "workerManager.h"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	WorkerManager manage;
+	int choice = 0;
+	while (true)
+	{
+		manage.Show_Menu();
+		cout << "请输入功能序号： ";
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 0:	//退出系统
+			manage.ExitSystem();
+			break;
+		case 1:	//增加职工
+			break;
+		case 2:	//删除职工
+			break;
+		case 3:	//修改职工
+			break;
+		case 4:	//查找职工
+			break;
+		case 5:	//显示员工
+			break;
+		case 6:	//按照编号排序
+			break;
+		case 7:	//清空文档
+			break;
+		default:
+			cout << "请选择正确的序号！！" << endl;
+			break;
+		}
+		fflush(stdin);
+		cout << "\n按任意键继续..." << endl;
+
+		getchar();
+		system("cls");
+	}
+
+	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
