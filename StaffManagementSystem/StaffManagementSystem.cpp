@@ -2,50 +2,74 @@
 //
 #include <iostream>
 #include <string>
-#include "Staff.h"
+#include "worker.h"
+#include "employee.h"
+#include "employeer.h"
+#include "boss.h"
 #include "workerManager.h"
 
 using namespace std;
 
+
+
 int main()
 {
-	WorkerManager manage;
-	int choice = 0;
-	while (true)
-	{
-		manage.Show_Menu();
-		cout << "请输入功能序号： ";
-		cin >> choice;
+	Employee dagongren1(001, "张三", 1, "摸鱼");
+	Employeer jingli1(002, "李四", 2, "抓摸鱼");
+	Boss laoban(000, "光头", 3, "喝茶");
+	Staff* staff = &dagongren1;
+	staff->Show();
 
-		switch (choice)
-		{
-		case 0:	//退出系统
-			manage.ExitSystem();
-			break;
-		case 1:	//增加职工
-			break;
-		case 2:	//删除职工
-			break;
-		case 3:	//修改职工
-			break;
-		case 4:	//查找职工
-			break;
-		case 5:	//显示员工
-			break;
-		case 6:	//按照编号排序
-			break;
-		case 7:	//清空文档
-			break;
-		default:
-			cout << "请选择正确的序号！！" << endl;
-			break;
-		}
-		fflush(stdin);
-		cout << "\n按任意键继续..." << endl;
+	cout << endl; 
 
-		getchar();
-		system("cls");
-	}
+	staff = &jingli1;
+	staff->Show();
+
+	cout << endl;
+
+	staff = &laoban;
+	staff->Show();
+
+
+	system("pause");
+
+	//WorkerManager manage;
+	//int choice = 0;
+	//while (true)
+	//{
+	//	manage.Show_Menu();
+	//	cout << "请输入功能序号： ";
+	//	cin >> choice;
+
+	//	switch (choice)
+	//	{
+	//	case 0:	//退出系统
+	//		manage.ExitSystem();
+	//		break;
+	//	case 1:	//增加职工
+	//		break;
+	//	case 2:	//删除职工
+	//		break;
+	//	case 3:	//修改职工
+	//		break;
+	//	case 4:	//查找职工
+	//		break;
+	//	case 5:	//显示员工
+	//		break;
+	//	case 6:	//按照编号排序
+	//		break;
+	//	case 7:	//清空文档
+	//		break;
+	//	default:
+	//		cout << "请选择正确的序号！！" << endl;
+	//		break;
+	//	}
+	//	fflush(stdin);
+	//	cout << "\n按任意键继续..." << endl;
+
+	//	getchar();
+	//	system("cls");
+	//}
 
 	return 0;
 }
