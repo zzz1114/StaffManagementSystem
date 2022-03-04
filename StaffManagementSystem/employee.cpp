@@ -3,16 +3,26 @@
 #include "employee.h"
 using namespace std;
 
-//显示职工信息
-void Employee::Show()
+//打工人
+Employee::Employee(int departID, const char* name, int id)
 {
-	cout << "职工编号：" << this->m_Num << "\n"
-		<< "职工姓名：" << this->m_Name << "\n"
-		<< "职工岗位：" << this->GetPosName() << "\n"
-		<< "职工职责：" << this->m_Duty << endl;
+	strcpy_s(m_Name, name);
+	m_DepartID = departID;
+	m_Id = id;
+	next = NULL;
 }
 
-string Employee::GetPosName()
+
+//显示职工信息
+void Employee::ShowInfo()
 {
-	return "普通员工";
+	cout << "职工编号: " << this->m_Id << endl;
+	cout << "职工姓名: " << this->m_Name << endl;
+	cout << "所属部门: " << this->GetDepartName() << endl;
+	cout << endl;
+}
+
+string Employee::GetDepartName()
+{
+	return string("打工人");
 }

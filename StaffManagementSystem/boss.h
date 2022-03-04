@@ -4,13 +4,13 @@
 #include "worker.h"
 using namespace std;
 
-class Boss : public Staff {
+class Boss : public Worker {
 public:
-	Boss(int num, const char* name, int pos, const char* duty) : Staff(num, name, pos, duty) { }
+	Boss(int departID, const char* name, int id);
 
 	//显示职工信息
-	void Show();
+	void ShowInfo();
 
 	//获取岗位名称
-	string GetPosName();
+	string GetDepartName();
 };

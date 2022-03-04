@@ -14,27 +14,20 @@ using namespace std;
 
 int main()
 {
-	Employee dagongren1(001, "张三", 1, "摸鱼");
-	Employeer jingli1(002, "李四", 2, "抓摸鱼");
-	Boss laoban(000, "光头", 3, "喝茶");
-	Staff* staff = &dagongren1;
-	staff->Show();
+	Worker* worker = NULL;
+	worker = new Employee(2, "大张", 1005);
+	worker->ShowInfo();
+	
+	worker = new Employeer(3, "小记", 1002);
+	worker->ShowInfo();
 
-	cout << endl; 
-
-	staff = &jingli1;
-	staff->Show();
-
-	cout << endl;
-
-	staff = &laoban;
-	staff->Show();
-
+	worker = new Boss(1, "老王", 1000);
+	worker->ShowInfo();
 
 	system("pause");
-
+	 
 	//WorkerManager manage;
-	//int choice = 0;
+	//int choice = 9;
 	//while (true)
 	//{
 	//	manage.Show_Menu();
@@ -44,7 +37,7 @@ int main()
 	//	switch (choice)
 	//	{
 	//	case 0:	//退出系统
-	//		manage.ExitSystem();
+	//		manage.Exit_System();
 	//		break;
 	//	case 1:	//增加职工
 	//		break;
@@ -64,10 +57,10 @@ int main()
 	//		cout << "请选择正确的序号！！" << endl;
 	//		break;
 	//	}
-	//	fflush(stdin);
-	//	cout << "\n按任意键继续..." << endl;
-
-	//	getchar();
+	//	//cout << "\n按任意键继续..." << endl;
+	//	//fflush(stdin);
+	//	//getchar();
+	//	system("pause");
 	//	system("cls");
 	//}
 

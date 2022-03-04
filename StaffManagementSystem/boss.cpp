@@ -1,17 +1,24 @@
-#include <iostream>
-#include <string>
 #include "boss.h"
 
-//显示职工信息
-void Boss::Show()
+Boss::Boss(int departID, const char* name, int id)
 {
-	cout << "职工编号：" << this->m_Num << "\n"
-		<< "职工姓名：" << this->m_Name << "\n"
-		<< "职工岗位：" << this->GetPosName() << "\n"
-		<< "职工职责：" << this->m_Duty << endl;
+	strcpy_s(m_Name, name);
+	m_DepartID = departID;
+	m_Id = id;
+	next = NULL;	
 }
 
-string Boss::GetPosName()
+//显示职工信息
+void Boss::ShowInfo()
 {
-	return "幕后老板";
+	cout << "职工编号: " << this->m_Id << endl;
+	cout << "职工姓名: " << this->m_Name << endl;
+	cout << "所属部门: " << this->GetDepartName() << endl;
+	cout << endl;
+}
+
+//获取岗位名称
+string Boss::GetDepartName()
+{
+	return string("老板");
 }

@@ -1,33 +1,23 @@
 #pragma once
+
 #include <iostream>
 #include <string>
-
 using namespace std;
 
-//职工抽象类
-class Staff {
+//一共有三种员工：普通打工人、经理、老板，首先定义一个职工抽象类
+class Worker
+{
 public:
-	Staff() : m_Num(0), m_Name(NULL), m_Pos(0), m_Duty(NULL) { }
-	Staff(int num, const char* name, int pos, const char* duty);
-	~Staff();
+	//显示个人信息
+	virtual void ShowInfo() = 0;
 
-	//显示职工信息
-	virtual void Show() = 0;
-	
 	//获取岗位名称
-	virtual string GetPosName() = 0;
+	virtual string GetDepartName() = 0;
 
+	class Worker* GetNextWorker();
 protected:
-
-	//职工编号
-	int m_Num;
-
-	//职工姓名
-	char* m_Name;
-
-	//职工岗位	部门编号
-	int m_Pos;
-
-	//职工职责
-	char* m_Duty;
+	char m_Name[20];
+	int m_Id;
+	int m_DepartID;		//部门id
+	class Worker* next;
 };

@@ -3,13 +3,14 @@
 #include "worker.h"
 using namespace std;
 
-class Employee : public Staff {
+class Employee : public Worker {
 public:
-	Employee(int num, const char* name, int pos, const char* duty) : Staff(num, name, pos, duty) { }
+	//姓名、部门编号、职工编号
+	Employee(int departID, const char* name, int id);
 
 	//显示职工信息
-	void Show();
+	void ShowInfo();
 
 	//获取岗位名称
-	string GetPosName();
+	string GetDepartName();
 };

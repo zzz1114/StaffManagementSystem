@@ -3,13 +3,13 @@
 #include <iostream>
 #include "worker.h"
 
-class Employeer : public Staff {
+class Employeer : public Worker {
 public:
-	Employeer(int num, const char* name, int pos, const char* duty) : Staff(num, name, pos, duty) { }
+	Employeer(int departID, const char* name, int id);
 
 	//显示职工信息
-	void Show();
+	void ShowInfo();
 
 	//获取岗位名称
-	string GetPosName();
+	string GetDepartName();
 };
