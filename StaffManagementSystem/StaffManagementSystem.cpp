@@ -10,59 +10,72 @@
 
 using namespace std;
 
-
-
-int main()
+void testClass()
 {
 	Worker* worker = NULL;
 	worker = new Employee(2, "大张", 1005);
 	worker->ShowInfo();
-	
+	delete worker;	//这里要记得清理掉这块内存
+
 	worker = new Employeer(3, "小记", 1002);
 	worker->ShowInfo();
+	delete worker;
 
 	worker = new Boss(1, "老王", 1000);
 	worker->ShowInfo();
-
+	delete worker;
+	worker = NULL;
 	system("pause");
-	 
-	//WorkerManager manage;
-	//int choice = 9;
-	//while (true)
-	//{
-	//	manage.Show_Menu();
-	//	cout << "请输入功能序号： ";
-	//	cin >> choice;
+}
 
-	//	switch (choice)
-	//	{
-	//	case 0:	//退出系统
-	//		manage.Exit_System();
-	//		break;
-	//	case 1:	//增加职工
-	//		break;
-	//	case 2:	//删除职工
-	//		break;
-	//	case 3:	//修改职工
-	//		break;
-	//	case 4:	//查找职工
-	//		break;
-	//	case 5:	//显示员工
-	//		break;
-	//	case 6:	//按照编号排序
-	//		break;
-	//	case 7:	//清空文档
-	//		break;
-	//	default:
-	//		cout << "请选择正确的序号！！" << endl;
-	//		break;
-	//	}
-	//	//cout << "\n按任意键继续..." << endl;
-	//	//fflush(stdin);
-	//	//getchar();
-	//	system("pause");
-	//	system("cls");
-	//}
+int main()
+{
+	//testClass();
+	 
+	WorkerManager manage;
+	int choice = 9;
+	while (true)
+	{
+		manage.Show_Menu();
+		cout << "请输入功能序号： ";
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 0:	//退出系统
+			manage.Exit_System();
+			break;
+		case 1:	//增加职工
+			manage.InsertWorker();
+			break;
+		case 2:	//删除职工
+			manage.DeleteWorker();
+			break;
+		case 3:	//修改职工
+			manage.EditWorkerInfo();
+			break;
+		case 4:	//查找职工
+			manage.SearchWorker();
+			break;
+		case 5:	//显示员工
+			manage.ShowWorkers();
+			break;
+		case 6:	//按照编号排序
+			manage.SortByID();
+			break;
+		case 7:	//清空文档
+			manage.ClearData();
+			break;
+		default:
+			cout << "请选择正确的序号！！" << endl;
+			break;
+		}
+		//cout << "\n按任意键继续..." << endl;
+		//fflush(stdin);
+		//getchar();
+		system("pause");
+		system("cls");
+	}
 
 	return 0;
 }

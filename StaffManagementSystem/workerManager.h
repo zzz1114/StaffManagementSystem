@@ -40,12 +40,7 @@ public:
 	//退出系统
 	void Exit_System();
 private:
-	Worker* m_Employee;		//打工人链表
-	int m_EmployeeNum;
-
-	Worker* m_Employeer;	//经理链表
-	int m_EmployeerNum;
-
-	Worker* m_Boss;			//老板链表
-	int m_BossNum;
+	Worker* *m_workers;	//父类指针数组，用于存储所有的子类对象指针
+	int m_workerNum;
+	int m_maxNum;		//已经申请的内存大小（几个worker）
 };

@@ -1,8 +1,2 @@
-﻿  StaffManagementSystem.cpp
-  boss.cpp
-  employee.cpp
-  employeer.cpp
-  worker.cpp
-  workerManager.cpp
-D:\MyData\Code\C++\learnInBilibili\StaffManagementSystem\StaffManagementSystem\workerManager.cpp(60,3): error C2143: 语法错误: 缺少“;”(在“break”的前面)
-  正在生成代码...
+﻿  workerManager.cpp
+  StaffManagementSystem.vcxproj -> D:\MyData\Code\C++\learnInBilibili\StaffManagementSystem\Debug\StaffManagementSystem.exe
